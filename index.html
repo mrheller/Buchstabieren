@@ -1,0 +1,314 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/Organization">
+	<head>
+		<style>
+			html
+			{
+				font-size:100%;color-profile:srgb
+			}
+			
+			body
+			{
+				font-style:normal;font-variant:normal;font-weight:normal;font-size:14px;line-height:22px;font-family:Arial,sans-serif
+			}
+			h1,h2,h3
+			{
+				font-family:'Terminal Dosis',sans-serif;font-weight:500
+			}
+			h1
+			{
+				font-size:24px;margin-top:24px
+			}
+			h2
+			{
+				font-size:20px;margin-top:12px
+			}
+			h3
+			{
+				font-size:16px;text-transform:uppercase;letter-spacing:.055em
+			}
+			*
+			{
+				margin:0px;padding:0px
+			}
+			
+			body
+			{
+				background-color:#000;color:#eee
+			}
+			.container,.navigation
+			{
+				width:1024px;margin:0px auto;display:block
+			}
+			.navigation
+			{
+				display:none
+			}
+			a
+			{
+				text-decoration:none;color:#fff
+			}
+			h1,h2,h3
+			{
+				color:#fff
+			}
+			h1,h2
+			{
+				font-weight:500;font-size:18px;letter-spacing:.055em;text-transform:uppercase
+			}
+			h1 strong,h2 strong
+			{
+				font-weight:700;color:#fff}h1{line-height:20px;margin-top:0px
+			}
+			h2
+			{
+				margin-bottom:35px;line-height:48px;border-top-width:1px;border-top-style:solid;border-top-color:#242424;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#242424;color:#595959
+			}
+				h2 strong
+			{
+				padding-top:12px;padding-bottom:12px;padding-right:18px;margin-right:18px;border-right-width:1px;border-right-style:solid;border-right-color:#242424
+			}
+			h3
+			{
+				text-transform:none
+			}
+			body
+			{
+				-webkit-transition:padding-top .3s cubic-bezier(0,.69,.42,1);min-width:950px
+			}
+			
+
+			#mast
+			{
+				margin-bottom:1px;height:255px;overflow:hidden;background-color:#252525
+			}
+			#mast canvas
+			{
+				position:absolute
+			}
+			#mast #update
+			{
+				-webkit-transition:opacity .3s linear;opacity:0;color:#222;background-color:#fff3dd;font-size:12px;display:inline-block;text-align:center;line-height:36px;padding:0px 28px;border-top-left-radius:0px;border-top-right-radius:0px;border-bottom-right-radius:8px;border-bottom-left-radius:8px;position:relative;z-index:2
+			}
+			#mast:hover #update
+			{
+				-webkit-transition:opacity .3s linear;opacity:1
+			}
+			#mast:hover #update:hover
+			{
+				background-color:#fff;text-decoration:underline
+			}
+			#projects .navigation
+			{
+				padding:0px 0px 35px
+			}
+			#projects .navigation a
+			{
+				position:relative;display:inline-block;margin-top:-110px;font-family:'Terminal Dosis',sans-serif;font-size:24px
+			}
+			#projects .navigation a.prev
+			{
+				float:left;margin-left:-37px
+			}
+			#projects .navigation a.next
+			{
+				float:right;margin-right:-37px
+			}
+			#projects .navigation ul
+			{
+				width:100%;display:inline-block;text-align:center;margin:12px 0px 0px
+			}
+			#projects .navigation ul li
+			{
+				display:inline-block;width:10px;height:10px;border-top-left-radius:10px;border-top-right-radius:10px;border-bottom-right-radius:10px;border-bottom-left-radius:10px;background-color:#252525;color:#252525;margin-right:6px;overflow:hidden;cursor:pointer;background-position:initial initial;background-repeat:initial initial
+			}
+			#projects .navigation ul li:hover,#projects .navigation ul li.active
+			{
+				background-color:#656565;color:#656565;background-position:initial initial;background-repeat:initial initial
+			}
+			#projects .container
+			{
+				padding:1px 0px;vertical-align:top
+			}
+			#projects .container a
+			{
+				border:0px solid rgba(0,0,0,0);margin-bottom:0px;float:left;width:0px;height:0px;line-height:0
+			}
+			#projects .container a:not(:nth-child(3n)) 
+			{
+				margin-right:0px
+			}
+			#projects .container a:last-child::after
+			{
+				display:block;clear:both
+			}
+			#projects .container a img
+			{
+				width:0px;height:0px;opacity:1;position:relative
+			}
+			#projects .container a figcaption
+			{
+				text-align:center;line-height:135px;margin-top:-135px;font-size:24px;opacity:0;display:block;position:relative;top:0px;left:0px;width:111fpx;height:135px;background-color:rgba(0,0,0,.6);font-family:'Terminal Dosis',sans-serif;-webkit-transition:opacity .15s linear
+			}
+			#projects .container a:hover
+			{
+				border:1px solid #242424
+			}
+			#projects .container a:hover figcaption
+			{
+				opacity:1
+			}
+			#projects #carousel:not(:empty) 
+			{
+				clear:both;-webkit-transition:margin-left .3s cubic-bezier(0,.69,.42,1)
+			}
+			.clear
+			{
+				clear:both
+			}
+			footer
+			{
+				clear:both;height:68px;background-color:#1c1c1c
+			}
+			footer #footerContent
+			{
+				width:916px;margin:0px auto;padding:21px 0px 0px;height:47px;display:block
+			}
+			footer ul
+			{
+				clear:right;float:right
+			}
+			footer ul li
+			{
+				display:inline-block;clear:both;vertical-align:bottom
+			}
+			footer ul li a
+			{
+				padding-right:16px;color:#fff;font-size:11px;line-height:24px;text-decoration:underline
+			}
+			#alphabets
+			{
+				margin: auto;
+			}
+			.control
+			{
+				margin: auto;
+				width:1024px;
+				height:414px;
+				text-align:center;
+			}
+			button
+			{
+			
+				padding:0px;
+				margin:0px;
+			}
+			button:hover
+			{
+				
+				opacity:0.4;
+				filter:alpha(opacity=40);
+			}
+			img
+			{
+
+				padding:0px;
+				margin:0px;
+				width:100px;
+				height:135px;
+			}
+			
+		</style>
+		
+
+		
+		<!--[if gt IE 8]>
+		<!-->
+			<!--<script data-main="/src/main" src="third-party/requirejs/require.js"></script>-->
+			<script type="text/javascript" src="build/main.js">
+			</script>
+		<!--<![endif]-->
+
+		<!--[if lte IE 8]>
+			<link href='http://fonts.googleapis.com/css?family=Terminal+Dosis:300,500,700' rel='stylesheet' type='text/css'>
+		<![endif]-->
+
+
+		<!-- General SEO -->
+			<meta name="author" content="Maelstrom"/>
+			<meta name="keywords" content="webgl, canvas, html5, javascript, project, kids, children, educational, word formation, language, learning"/>
+			<meta name="description" content="This is a simple tool to help young kids learn word spelling and reading."/>
+			<link rel="icon" type="image/jpg" href=""/>
+			<link rel="image" type="image/png" href="/img/meta/workshop.png"/>
+			<SCRIPT>
+			
+			
+			</SCRIPT>
+	</head>
+	
+	<body>
+		<!--[if lte IE 8]>
+			<p class="old">	  
+				<strong>Hello. This is a simple tool to help young kids learn word spelling and reading.</strong><br /><br />	This page is designed for modern desktop browsers, such as the latest versions of <a href="http://www.google.com/chrome">Google Chrome</a>, <a href="http://www.getfirefox.com/">Firefox</a>, <a href="http://www.apple.com/safari/">Safari</a>, <a href="http://www.opera.com/">Opera</a>, or <a href="http://microsoft.com/ie">Internet Explorer</a>. <br /><br />Please update your browser and come on back.
+			</p>
+		<![endif]--><!--[if gt IE 8]><!-->
+			
+		<header>
+			<h1>
+				<span class="container">
+					<strong>Reading Workshop</strong>.Language Tools
+				</span>
+			</h1>
+			
+		</header>
+			
+		<div id="mast">
+			<div class="container">
+				
+			</div>
+		</div>
+		<div id="alphabets">
+		<div class="control">
+
+			<button onclick="touchtype('A');">	<img src="https://lh4.googleusercontent.com/-rYvTeKrdSJ4/UZkedHqWH7I/AAAAAAAAAEA/YpB4f3qfEgM/s443/a.jpg" alt="A">	</button>
+			<button onclick="touchtype('B');">	<img src="https://lh5.googleusercontent.com/-l12-a1gTLoI/UZkewMyLPfI/AAAAAAAAAEA/-rY4SU7ZL9U/s443/b.jpg" alt="B">	</button>
+			<button onclick="touchtype('C');">	<img src="https://lh6.googleusercontent.com/-rkzQ-EH778s/UZkewiM2yoI/AAAAAAAAAEA/pdJ9xzdiSsw/s443/c.jpg" alt="C">	</button>
+			<button onclick="touchtype('D');">	<img src="https://lh3.googleusercontent.com/-TgD3Kj0Thbo/UZkemf60soI/AAAAAAAAAEA/Uw1Z9o_Sl6Y/s443/d.jpg" alt="D">	</button>
+			<button onclick="touchtype('E');">	<img src="https://lh4.googleusercontent.com/-T_kcvOHHzSY/UZkedvaYyZI/AAAAAAAAAEA/j9JSpqdkQGk/s443/e.jpg" alt="E">	</button>
+			<button onclick="touchtype('F');">	<img src="https://lh6.googleusercontent.com/-A5JRRDgRKR0/UZkenXdPzCI/AAAAAAAAAEA/kG3qXFZ0Gx8/s443/f.jpg" alt="F">	</button>
+			<button onclick="touchtype('G');">	<img src="https://lh5.googleusercontent.com/-OIiGox6Symc/UZkexA1zAYI/AAAAAAAAAEA/VrRSoC6b-mM/s443/g.jpg" alt="G">	</button>
+			<button onclick="touchtype('H');">	<img src="https://lh6.googleusercontent.com/-2j5r2vJXSqw/UZkexglKP8I/AAAAAAAAAEA/iiAoVNrWffk/s443/h.jpg" alt="H">	</button>
+			<button onclick="touchtype('I');">	<img src="https://lh6.googleusercontent.com/-3qdxCP9MF6Q/UZkeeBUwXOI/AAAAAAAAAEA/7BRv24eo720/s443/i.jpg" alt="I">	</button>
+			<button onclick="touchtype('J');">	<img src="https://lh4.googleusercontent.com/-1GgE_F-tYgg/UZkem51zi5I/AAAAAAAAAEA/lT16nmS_0fQ/s443/j.jpg" alt="J">	</button>
+			<button onclick="touchtype('K');">	<img src="https://lh5.googleusercontent.com/-h8VZBPnYqxI/UZkenkABanI/AAAAAAAAAEA/SVS513VTAcg/s443/k.jpg" alt="K">	</button>
+			<button onclick="touchtype('L');">	<img src="https://lh3.googleusercontent.com/-RKeKppCLTus/UZkejeqUSHI/AAAAAAAAAEA/n9-So51cric/s443/l.jpg" alt="L">	</button>
+			<button onclick="touchtype('M');">	<img src="https://lh4.googleusercontent.com/-FAn8P_dL8W8/UZkekYdRe-I/AAAAAAAAAEA/XtPAQz0XO3I/s443/m.jpg" alt="M">	</button>
+			<button onclick="touchtype('N');">	<img src="https://lh3.googleusercontent.com/-ZUkHHq91_dk/UZkelxCyYZI/AAAAAAAAAEA/efbNQJ_TTCc/s443/n.jpg" alt="N">	</button>
+			<button onclick="touchtype('O');">	<img src="https://lh4.googleusercontent.com/-b98Jrugnku0/UZkefJWOdLI/AAAAAAAAAEA/aKfnhvtaDCM/s443/o.jpg" alt="O">	</button>
+			<button onclick="touchtype('P');">	<img src="https://lh6.googleusercontent.com/--vVYZ_gpbPA/UZkeomUqiXI/AAAAAAAAAEA/mT6LtKCRFuw/s443/p.jpg" alt="P">	</button>
+			<button onclick="touchtype('Q');">	<img src="https://lh5.googleusercontent.com/-JDX0Ff658T4/UZkeqmM9arI/AAAAAAAAAEA/9P6MKFFZS-k/s443/q.jpg" alt="Q">	</button>
+			<button onclick="touchtype('R');">	<img src="https://lh3.googleusercontent.com/-FhKnNCjU6ZE/UZkepMT93iI/AAAAAAAAAEA/Ggpwg0mSe8s/s443/r.jpg" alt="R">	</button>
+			<button onclick="touchtype('S');">	<img src="https://lh6.googleusercontent.com/-ticutEv-hLk/UZkeppZ2ZaI/AAAAAAAAAEA/MXjCAPGVfzo/s443/s.jpg" alt="S">	</button>
+			<button onclick="touchtype('T');">	<img src="https://lh6.googleusercontent.com/-JQmpk05ckfo/UZkeqAe4ErI/AAAAAAAAAEA/BYacUHmF6GU/s443/t.jpg" alt="T">	</button>
+			<button onclick="touchtype('U');">	<img src="https://lh6.googleusercontent.com/-IOuJmD7kYlg/UZkefxXxmvI/AAAAAAAAAEA/w1mXxcqtlJ8/s443/u.jpg" alt="U">	</button>
+			<button onclick="touchtype('V');">	<img src="https://lh3.googleusercontent.com/-OmaHrG_Kn0A/UZkerAMtEbI/AAAAAAAAAEA/RToZJdi90Do/s443/v.jpg" alt="V">	</button>
+			<button onclick="touchtype('W');">	<img src="https://lh6.googleusercontent.com/-bE5du_dddpc/UZketNfwYnI/AAAAAAAAAEA/nUCYm5WmOhQ/s443/w.jpg" alt="W">	</button>
+			<button onclick="touchtype('X');">	<img src="https://lh3.googleusercontent.com/-fKPd1v4GyfI/UZkeuCml-bI/AAAAAAAAAEA/-yH-lo5DusE/s443/x.jpg" alt="X">	</button>
+			<button onclick="touchtype('Y');">	<img src="https://lh6.googleusercontent.com/-khSEN8Ya39s/UZkevoouhNI/AAAAAAAAAEA/llQ4gcNyxX4/s443/y.jpg" alt="Y">	</button>
+			<button onclick="touchtype('Z');">	<img src="https://lh3.googleusercontent.com/-OAo_rbED5Fk/UZkevF-5PII/AAAAAAAAAEA/D2maJ9g6jLU/s443/z.jpg" alt="Z">	</button>
+			<button onclick="cleartype();">	<img src="https://lh5.googleusercontent.com/-xdJbXZWKzXg/Ucrw5-bbqdI/AAAAAAAAAEM/yTkmn1HMYbY/s443/clear.jpg" alt="clear">	</button>
+			
+		</div>
+		</div>
+		<section id="projects">
+			<div class="container">
+				<div id="carousel">
+				</div>
+			</div>
+		</section>
+
+
+
+		<!--<![endif]-->
+	</body>
+</html>
